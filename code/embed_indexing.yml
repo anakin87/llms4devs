@@ -1,0 +1,79 @@
+components:
+  converter:
+    init_parameters:
+      encoding: utf-8
+    type: haystack.components.converters.txt.TextFileToDocument
+  embedder:
+    init_parameters:
+      batch_size: 32
+      device:
+        device: cuda:0
+        type: single
+      embedding_separator: '
+
+        '
+      meta_fields_to_embed: []
+      model: sentence-transformers/all-mpnet-base-v2
+      normalize_embeddings: false
+      prefix: ''
+      progress_bar: true
+      suffix: ''
+      token:
+        env_vars:
+        - HF_API_TOKEN
+        strict: false
+        type: env_var
+    type: haystack.components.embedders.sentence_transformers_document_embedder.SentenceTransformersDocumentEmbedder
+  splitter:
+    init_parameters:
+      split_by: word
+      split_length: 200
+      split_overlap: 0
+    type: haystack.components.preprocessors.document_splitter.DocumentSplitter
+  writer:
+    init_parameters:
+      document_store:
+        init_parameters:
+          additional_config: null
+          additional_headers: null
+          auth_client_secret: null
+          collection_settings:
+            class: Default
+            invertedIndexConfig:
+              indexNullState: true
+            properties:
+            - dataType:
+              - text
+              name: _original_id
+            - dataType:
+              - text
+              name: content
+            - dataType:
+              - text
+              name: dataframe
+            - dataType:
+              - blob
+              name: blob_data
+            - dataType:
+              - text
+              name: blob_mime_type
+            - dataType:
+              - number
+              name: score
+          embedded_options: null
+          proxies: null
+          startup_period: 5
+          trust_env: false
+          url: http://localhost:8080
+        type: haystack_integrations.document_stores.weaviate.document_store.WeaviateDocumentStore
+      policy: NONE
+    type: haystack.components.writers.document_writer.DocumentWriter
+connections:
+- receiver: splitter.documents
+  sender: converter.documents
+- receiver: embedder.documents
+  sender: splitter.documents
+- receiver: writer.documents
+  sender: embedder.documents
+max_loops_allowed: 100
+metadata: {}
