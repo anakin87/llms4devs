@@ -1,5 +1,5 @@
 # Large Language Models for Developers - from zero to your first LLM application
-- [🍿 Talk](https://www.youtube.com/live/Va6vIYCVxj0?feature=shared&t=20120)
+- [🍿 Talk](https://www.youtube.com/watch?v=L6sUztYJXT8)
 - [🧑‍🏫 Slide deck](./slide_deck.pdf)
 
 Material for the omonymous talk.
