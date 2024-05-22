@@ -1,5 +1,5 @@
 # Install the Weaviate document store and the Weaviate-Haystack integration:
-# https://docs.haystack.deepset.ai/v2.0/docs/weaviatedocumentstore
+# https://docs.haystack.deepset.ai/docs/weaviatedocumentstore
 
 import glob
 from haystack_integrations.document_stores.weaviate.document_store \
