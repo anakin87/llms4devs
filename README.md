@@ -1,13 +1,14 @@
 # Large Language Models for Developers - from zero to your first LLM application
-- [🍿 Talk](https://www.youtube.com/watch?v=L6sUztYJXT8)
+- [🍿 Talk - 1st edition - Open Source Day 2024](https://www.youtube.com/watch?v=L6sUztYJXT8)
+- [🍿 Talk - 2nd edition - PyCon Italy 2024](https://www.youtube.com/watch?v=R_C0IJmAHrQ)
 - [🧑‍🏫 Slide deck](./slide_deck.pdf)
 
-Material for the omonymous talk.
+Material for the homonymous talk.
 
 <details><summary>📝 Abstract</summary>
 The rise of ChatGPT and Large Language Models has revolutionized the tech landscape, leaving developers overwhelmed by the infinite opportunities and intrigued by the technical challenges posed by their complex nature.
 
-This session provides a developer-centric introduction to LLMs, focused on practical applications.No pre-existing knowledge of LLMs and NLP is required.
+This session provides a developer-centric introduction to LLMs, focused on practical applications. No pre-existing knowledge of LLMs and NLP is required.
 
 You will gain insights into: using closed and open-source models, how to effectively prompt LLMs, vector databases, implementing Retrieval Augmented Generation applications (answer generation based on your data), building more complex applications.
 
